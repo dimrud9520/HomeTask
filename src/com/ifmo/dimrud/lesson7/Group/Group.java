@@ -7,8 +7,8 @@ Alpenist vanja=new Alpenist("Ваня", "Санкт-Петербург");
         System.out.println(vanja.getFullAlp());
 Gora everest=new Gora();
 everest.setVisota(5000);
-everest.setNabor(vanja);
 everest.setTitle("Эверест");
+everest.setAlpenist(vanja);
         System.out.println(everest);
 
     }

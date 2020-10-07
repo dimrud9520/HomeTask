@@ -3,7 +3,7 @@ package com.ifmo.dimrud.lesson7.Group;
 public class Gora {
     private String title;
     private int visota;
-    private Nabor nabor;
+    private Alpenist alpenist;
 
 
     public String getTitle() {
@@ -11,7 +11,8 @@ public class Gora {
     }
 
     public void setTitle(String title) {
-        if (title == null || title.length() < 4) {
+        if (title==null||title.length()<4)
+        {
             throw new IllegalArgumentException("Название должно быть больше 4 символов");
         }
         this.title = title;
@@ -22,31 +23,32 @@ public class Gora {
     }
 
     public void setVisota(int visota) {
-        if (visota < 100) {
+        if (visota<100)
+        {
             throw new IllegalArgumentException("Высота не может быть меньше 100м");
         }
         this.visota = visota;
     }
 
-        public Nabor getNabor() {
+    public Alpenist getAlpenist() {
+        return alpenist;
+    }
 
-            return nabor;
+    public void setAlpenist(Alpenist alpenist) {
+        if(alpenist==null){
+            throw new IllegalArgumentException("alpenist не может быть равен null");
         }
+        this.alpenist = alpenist;
+    }
+    public String toString()
+    {
 
-        public void setNabor(Nabor nabor)
-        {
-           this.nabor = nabor;
-        }
-
-
-        public String toString()
-        {
-            return "Gora{" +
-                    "title='" + title + '\'' +
-                    ", visota=" + visota +
-                    ", alpenist=" + nabor +
-                    '}';
-
-        }
+      return  "Gora{" +
+                "title='" + title + '\'' +
+                ", visota=" + visota +
+                ", alpenist=" + alpenist +
+                '}';
 
     }
+
+}
