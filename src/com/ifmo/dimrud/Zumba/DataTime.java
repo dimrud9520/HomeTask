@@ -6,29 +6,29 @@ import java.time.LocalTime;
 public class DataTime {
 
 
-    static final private LocalDate todayData = LocalDate.now();// сегодняшняя дата
-    static final private LocalTime currenTime = LocalTime.now();//текущее время
-    static final private LocalTime openTime = LocalTime.of(8, 00);//время открытия
-    static final private LocalTime closeTime = LocalTime.of(22, 00);//время закрытия
-    static final private LocalTime closeTimeToDayAb = LocalTime.of(16, 00);//время окончание действия дневного абонемента
+    static final private LocalDate TODAYDATA = LocalDate.now();// сегодняшняя дата
+    static final private LocalTime CURRENTIME = LocalTime.now();//текущее время
+    static final private LocalTime OPENTIME = LocalTime.of(8, 00);//время открытия
+    static final private LocalTime CLOSETIME = LocalTime.of(22, 00);//время закрытия
+    static final private LocalTime CLOSETIMETODAYAB = LocalTime.of(16, 00);//время окончание действия дневного абонемента
 
     public static LocalDate getTodayData() {
-        return todayData;
+        return TODAYDATA;
     }
 
     public static LocalTime getCurrenTime() {
-        return currenTime;
+        return CURRENTIME;
     }
 
     public static LocalTime getOpenTime() {
-        return openTime;
+        return OPENTIME;
     }
 
     public static LocalTime getCloseTime() {
-        return closeTime;
+        return CLOSETIME;
     }
 
     public static LocalTime getCloseTimeToDayAb() {
-        return closeTimeToDayAb;
+        return CLOSETIMETODAYAB;
     }
 }

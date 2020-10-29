@@ -3,13 +3,12 @@ package com.ifmo.dimrud.Zumba;
 import java.util.Objects;
 
 public class Fitness {
-    private Client[] clientToWaterPool = new Client[20];// массив бассейна
-    private Client[] clientToFitness = new Client[20];// массив тренажерного зала
-    private Client[] clientToGroup = new Client[20];// массив групповых занятий
-    private Abonement abonement;
+    private Abonement[] clientToWaterPool = new Abonement[20];// массив бассейна
+    private Abonement[] clientToFitness = new Abonement[20];// массив тренажерного зала
+    private Abonement[] clientToGroup = new Abonement[20];// массив групповых занятий
 
-    public void goToWaterPool(Client client) {
-        Objects.requireNonNull(client);
+
+    public void goToWaterPool(Abonement abonement) {
         if (clientToWaterPool[19] != null) {
             System.out.println("На групповых занятиях нету мест");
             return;
@@ -28,17 +27,15 @@ public class Fitness {
         }
         for (int i = 0; i < clientToWaterPool.length; i++) {
             if (clientToWaterPool[i] == null) {
-                clientToWaterPool[i] = client;
+                clientToWaterPool[i] = abonement;
                 break;
-
             }
-
         }
-        client.toString();
+        abonement.getClient().toString();
     }
 
-    public void goToFitness(Client client) {
-        Objects.requireNonNull(client);
+    public void goToFitness(Abonement abonement) {
+        Objects.requireNonNull(abonement);
         if (clientToFitness[19] != null) {
             System.out.println("На групповых занятиях нету мест");
             return;
@@ -57,15 +54,15 @@ public class Fitness {
         }
         for (int i = 0; i < clientToFitness.length; i++) {
             if (clientToFitness[i] == null) {
-                clientToFitness[i] = client;
+                clientToFitness[i] = abonement;
                 break;
             }
         }
-        client.toString();
+        abonement.getClient().toString();
     }
 
-    public void goToGroup(Client client) {
-        Objects.requireNonNull(client);
+    public void goToGroup(Abonement abonement) {
+        Objects.requireNonNull(abonement);
         if (clientToGroup[19] != null) {
             System.out.println("На групповых занятиях нету мест");
             return;
@@ -86,14 +83,13 @@ public class Fitness {
             System.out.println("Фитнес зал закрыт");
             return;
         }
-
         for (int i = 0; i < clientToGroup.length; i++) {
             if (clientToGroup[i] == null) {
-                clientToGroup[i] = client;
+                clientToGroup[i] = abonement;
                 break;
             }
         }
-        client.toString();
+        abonement.getClient().toString();
     }
 
     public void closeFitness() {

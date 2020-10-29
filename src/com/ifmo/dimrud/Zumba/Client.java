@@ -1,10 +1,12 @@
 package com.ifmo.dimrud.Zumba;
 
+import java.util.Objects;
+
 public class Client {
     private String name;
     private String surname;
     private int birthday;
-    private Abonement abonement;
+
 
     public Client(String name, String surname, int birthday) {
         if (name == null || name.length() < 2)
@@ -18,13 +20,6 @@ public class Client {
         this.birthday = birthday;
     }
 
-    public Abonement getAbonement() {
-        return abonement;
-    }
-
-    public void setAbonement(Abonement abonement) {
-        this.abonement = abonement;
-    }
 
     @Override
     public String toString() {
