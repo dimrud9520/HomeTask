@@ -37,24 +37,13 @@ public class MessageTask {
     public static void uniqueMessageCount(List<Message> messageList) {
         // TODO: Подсчитать количество уникальных сообщений
         //  Ответ в консоль
-       /* int value = 0;
-        int val = 0;
+        Set<Message> messageSet = new LinkedHashSet<>();
         for (int i = 0; i < messageList.size(); i++) {
-            Set<Message> messageSet = new LinkedHashSet<>();
-            if (messageSet.add(messageList.get(i))) {
-                value += 1;
-            }
-        }*/
-       /* int val = 0;
-        for (int i = 0; i < messageList.size(); i++) {
-            for (int j = 0; j < messageList.size(); j++) {
-                if (messageList.get(j).equals(messageList.get(i))) {
-                    val += 1;
-                }
-            }
+            messageSet.add(messageList.get(i));
         }
-        System.out.println(val);
-    }*/
+        System.out.println(messageSet.size());
+
+
     }
 
     public static List<Message> uniqueMessagesInOriginalOrder(List<Message> messageList) {
@@ -62,6 +51,14 @@ public class MessageTask {
         //  в котором они встретились в первоначальном списке
         //  Например, было: [{URGENT, 4}, {HIGH, 9}, {LOW, 3}, {HIGH, 9}]
         //  на выходе: [{URGENT, 4}, {HIGH, 9}, {LOW, 3}]
+        Set<Message> messageSet = new LinkedHashSet<>();
+        for (int i = 0; i < messageList.size(); i++) {
+            messageSet.add(messageList.get(i));
+        }
+        messageList.clear();
+        for (Message count : messageSet) {
+            messageList.add(count);
+        }
 
 
         return messageList;
@@ -80,7 +77,7 @@ public class MessageTask {
         for (int i = 0; i < messageList.size(); i++) {
             System.out.println(messageList.get(i));
         }
-        
+
     }
 
     public static void removeOther(List<Message> messageList, MessagePriority priority) {
@@ -107,9 +104,9 @@ public class MessageTask {
         // countEachCode(messages);
         //System.out.println("__");
         // removeEach(messages, MessagePriority.MEDIUM);
-       // System.out.println("______");
-       // removeOther(messages,MessagePriority.LOW);
-
+        // System.out.println("______");
+        // removeOther(messages,MessagePriority.LOW);
+        uniqueMessageCount(messages);
     }
 
 
